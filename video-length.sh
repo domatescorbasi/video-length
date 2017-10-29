@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Calculates length of the videos (mp4,mkv,avi,webm)
+# Calculates length of the videos (avi,mkv,mp4,mov,webm)
 # Usage : video-length.sh /path/to/directory
 #      or video-length.sh   # without any path parameter
 
