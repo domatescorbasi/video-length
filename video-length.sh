@@ -48,21 +48,18 @@ if [[ -n $mp4Length ]] ; then
 	hour=$(bc <<<  "$mp4Length / 3600")
 	hourWithTrail=$(bc <<< "scale = 2; $mp4Length / 3600")
 	minute=$(bc <<< "scale = 2; $(bc <<< "scale = 2; $hourWithTrail - $hour ") * 60")
-	printf "\nmkv Length: %s hours %s minutes\n" "$hour" "$minute"
+	printf "\nmp4 Length: %s hours %s minutes\n" "$hour" "$minute"
 
 fi
 if [[ -n $aviLength ]] ; then
 	hour=$(bc <<<  "$aviLength / 3600")
 	hourWithTrail=$(bc <<< "scale = 2; $aviLength / 3600")
 	minute=$(bc <<< "scale = 2; $(bc <<< "scale = 2; $hourWithTrail - $hour ") * 60")
-	printf "\nmkv Length: %s hours %s minutes\n" "$hour" "$minute"
+	printf "\navi Length: %s hours %s minutes\n" "$hour" "$minute"
 fi
 if [[ -n $webmLength ]] ; then
 	hour=$(bc <<<  "$webmLength / 3600")
 	hourWithTrail=$(bc <<< "scale = 2; $webmLength / 3600")
 	minute=$(bc <<< "scale = 2; $(bc <<< "scale = 2; $hourWithTrail - $hour ") * 60")
-	printf "\nmkv Length: %s hours %s minutes\n" "$hour" "$minute"
+	printf "\nwebm Length: %s hours %s minutes\n" "$hour" "$minute"
 fi
-
-
-
