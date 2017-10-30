@@ -25,7 +25,6 @@ calculateLength()
 	done
 }
 
-
 if [ $# -eq 0 ]; then
 	DIR="./"
 	calculateLength
