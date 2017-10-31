@@ -23,18 +23,23 @@ calculateLength()
 		fi
 	}
 	done
+	return 0
 }
 
 if [ $# -eq 0 ]; then
 	DIR="./"
 	calculateLength
+	exit 0
 elif [ $# -eq 1 ] && [ "$1" != -h ] && [ "$1" != --help ]; then
 	DIR="$1"
 	calculateLength
+	exit 0
 else
 	echo "$0 Help."
 	echo "This script calculates length of the videos (mp4,mkv,avi,webm)"
 	echo "Usage         : $0 [DIR]"
 	echo "Another usage : $0"
+	echo "Defaults to the current working directory if no path is given."
+	exit 1
 fi
 
