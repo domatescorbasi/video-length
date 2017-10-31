@@ -16,8 +16,8 @@ calculateLength()
 			format=duration {} \; | paste -sd+ -| bc 2>/dev/null)
 		if [[ -n $length ]] ; then
 			hour=$(bc <<<  "$length / 3600")
-			hourWithTrail=$(bc <<< "scale = 2; $length / 3600")
-			minute=$(bc <<< "scale = 2; $(bc <<< "scale = 2; $hourWithTrail - $hour ") * 60")
+			hourWithTrail=$(bc <<< "scale = 3; $length / 3600")
+			minute=$(bc <<< "scale = 3; $(bc <<< "scale = 3; $hourWithTrail - $hour ") * 60")
 			printf "%s Length: %s hours %s minutes\n" "${FORMATS[n]}" "$hour" "$minute"
 			export length;
 		fi
