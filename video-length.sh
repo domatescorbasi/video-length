@@ -32,8 +32,13 @@ if [ $# -eq 0 ]; then
 	exit 0
 elif [ $# -eq 1 ] && [ "$1" != -h ] && [ "$1" != --help ]; then
 	DIR="$1"
-	calculateLength
-	exit 0
+	if [ -d "$DIR" ]; then
+		calculateLength
+		exit 0
+	else
+		echo "Second argument should be a directory."
+		exit 1
+	fi
 else
 	echo "$0 Help."
 	echo "This script calculates length of the videos (mp4,mkv,avi,webm)"
